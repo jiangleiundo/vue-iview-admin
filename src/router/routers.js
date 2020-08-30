@@ -436,6 +436,25 @@ export default [
     ]
   },
   {
+    path: '/prod',
+    name: 'prod',
+    meta: {
+      hideInBread: true
+    },
+    component: Main,
+    children: [
+      {
+        path: 'product_page',
+        name: 'product_page',
+        meta: {
+          icon: 'ios-navigate',
+          title: '产品维护'
+        },
+        component: () => import('@/view/j-product/product.vue')
+      }
+    ]
+  },
+  {
     path: '/401',
     name: 'error_401',
     meta: {
