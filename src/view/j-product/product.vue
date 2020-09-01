@@ -1,8 +1,14 @@
 <template>
-    <div>123456</div>
+    <div>
+
+    </div>
 </template>
 <script>
-export default {
-  name: 'product_page'
-}
+  import table from '_c/table'
+  export default {
+    name: 'product_page',
+    component: {
+      table
+    }
+  }
 </script>
