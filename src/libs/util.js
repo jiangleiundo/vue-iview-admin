@@ -155,7 +155,7 @@ export const getNewTagList = (list, newRoute) => {
  * @param {*} access 用户权限数组，如 ['super_admin', 'admin']
  * @param {*} route 路由列表
  */
-const hasAccess = (access, route) => {
+export const hasAccess = (access, route) => {
   if (route.meta && route.meta.access) return hasOneOf(access, route.meta.access)
   else return true
 }
