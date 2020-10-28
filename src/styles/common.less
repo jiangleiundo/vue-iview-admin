@@ -1,0 +1,352 @@
+@cardDown: 10px;
+@cardAll: 10px;
+@btnLeft: 5px;
+@baseRed: #2C8CF0;
+@font-size-base: 13px;
+@input-placeholder-color: #888;
+
+.fl-l {
+    float: left
+}
+
+.fl-r {
+    float: right;
+}
+
+.cf:before,
+.cf:after {
+    content: ' ';
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+//.search-card {
+//    margin: -10px auto 0;
+//}
+
+.page-card {
+    margin: 0 auto @cardDown;
+
+    .search-btn {
+        margin-left: @btnLeft;
+    }
+
+    .ivu-page-options-elevator {
+        line-height: 30px;
+    }
+
+    &-container {
+        margin: @cardAll;
+        overflow: hidden;
+    }
+}
+
+.search-form {
+    //display: inline-block;
+
+    .ivu-form-item {
+        vertical-align: baseline;
+    }
+
+    .search-btn {
+        margin-left: 10px;
+    }
+}
+
+// 搜索框统一160px
+.search-input {
+    // margin: 0 0 10px 10px !important;
+    width: 160px !important;
+    vertical-align: middle;
+}
+.search-input-m {
+    margin: 0 0 10px 10px !important;
+    width: 140px !important;
+    vertical-align: middle;
+}
+.search-input-l {
+    margin: 0 0 10px 10px !important;
+    width: 180px !important;
+    vertical-align: middle;
+}
+
+.search-input-200 {
+    margin: 0 0 10px 10px !important;
+    width: 220px !important;
+    vertical-align: middle;
+}
+
+.search-input-240 {
+    margin: 0 0 10px 10px !important;
+    width: 240px !important;
+    vertical-align: middle;
+}
+
+.search-input-s {
+	margin: 0 0 10px 10px !important;
+	width: 105px !important;
+	vertical-align: middle;
+}
+.search-input-als {
+    margin: 0 0 10px 10px !important;
+    width: 105px !important;
+    vertical-align: middle;
+}
+.search-input-ars {
+    margin: 0 0 10px 0 !important;
+    width: 105px !important;
+    vertical-align: middle;
+}
+.search-input-a {
+    display: inline-block;
+    margin: 0 0 10px 0 !important;
+    vertical-align: middle;
+}
+
+// vue 默认的input是160px
+.form-input {
+    width: 260px !important;
+}
+
+.form-input-180 {
+    width: 180px !important;
+}
+
+.form-inline {
+    width: 350px;
+}
+
+.form-block {
+    width: 585px !important;
+}
+
+.ivu-poptip-confirm .ivu-poptip-footer {
+    text-align: center;
+}
+
+.form-img {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.ivu-tabs-tab {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.change-tip {
+    color: red;
+    position: absolute;
+    line-height: 35px;
+    margin-left: 5px;
+}
+
+// .ivu-table-stripe .ivu-table-body tr:nth-child(2n) td,
+// .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n) td {
+//     background: #e8e8ea;
+// }
+
+// .ivu-table-stripe .ivu-table-body tr.ivu-table-row-hover td,
+// .ivu-table-stripe .ivu-table-fixed-body tr.ivu-table-row-hover td {
+//     background: #ba9759;
+//     color:#ffffff;
+// }
+
+// .ivu-table-stripe .ivu-table-body tr.ivu-table-row-highlight td,
+// .ivu-table-stripe .ivu-table-fixed-body tr.ivu-table-row-highlight td {
+//     background: #f5e0df;
+// }
+
+// .ivu-table-stripe .ivu-table-body tr.ivu-table-row-highlight:nth-child(2n) td,
+// .ivu-table-stripe .ivu-table-fixed-body tr.ivu-table-row-highlight:nth-child(2n) td {
+//     background: #f5e0df;
+// }
+// end-- 修改table2019/6/5
+
+// 主题导航颜色修改
+.ivu-tag-primary {
+    background: @baseRed !important;
+    color: #fff !important;
+
+    .ivu-tag-dot-inner{
+        background: #fff !important;
+    }
+    .ivu-tag-text,
+    .ivu-icon-ios-close {
+        color: #fff !important;
+    }
+}
+.ivu-tag-default  .ivu-tag-dot-inner{
+    background: @baseRed !important;
+}
+
+// .main .header-con,
+// .main .logo-con {
+//     background-color: #ba9759 !important;
+//     border-bottom: 2px solid @baseRed !important;
+//     color: #fff;
+// }
+// end -- 主题导航修改
+
+// tab修改
+.ivu-drawer-header {
+    padding: 10px 16px;
+    background: @baseRed;
+
+    .ivu-drawer-header-inner {
+        color: #fff;
+    }
+}
+.ivu-drawer-close .ivu-icon-ios-close,
+.ivu-drawer-close .ivu-icon-ios-close:hover {
+    color: #fff;
+}
+
+.ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
+    color: #fff;
+    background: @baseRed;
+    border: 1px solid @baseRed;
+}
+
+.drawer-footer {
+    position: sticky;
+    bottom: 0px;
+    z-index: 1000;
+    text-align: center !important;
+    padding: 12px 0px 25px 0px;
+}
+
+.form-footer {
+    position: sticky;
+    bottom: -15px;
+    z-index: 1000;
+    text-align: center !important;
+    padding: 18px 0px 20px 0px;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid #e8e8e8;
+    background: #fff;
+}
+
+.ivu-btn-primary,
+.ivu-btn-default{
+    margin-left: 10px;
+}
+
+// table可编辑
+[contenteditable]:empty:before {
+    content: '点击输入内容';
+    color: gray;
+}
+[contenteditable]:focus:before {
+    content: none;
+}
+
+// modal 弹框设置最大高度
+.j-modal-sel .j-sel-table {
+    max-height: 620px;
+    overflow-y: scroll;
+}
+
+//  disabled 颜色加深
+.ivu-input-number-disabled .ivu-input-number-input {
+    opacity: 1;
+    color: #777;
+}
+.ivu-select-disabled .ivu-select-selection,
+.ivu-input[disabled], fieldset[disabled] .ivu-input,
+.ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+.ivu-select-selected-value {
+    color: #777 !important;
+    background-color: #f7f7f7 !important;
+}
+
+// 金额通用样式
+.j-money-red {
+    color: @baseRed;
+}
+
+// 校验失败
+.j-valid-err .ivu-input{
+    border: 1px solid #ed4014;
+}
+
+.spin-icon-load {
+    animation: ani-demo-spin 1s linear infinite;
+}
+
+.label-required:before {
+    content: "*";
+    display: inline-block;
+    margin-right: 4px;
+    line-height: .9;
+    font-family: SimSun;
+    font-size: 12px;
+    color: #ed4014
+}
+
+// 解决Chrome和ie下必输标志 * 影响元素高度问题
+.ivu-form {
+    .ivu-form-item {
+        margin-bottom: 20px !important;
+        .ivu-form-item-error-tip {
+            line-height: 0.8;
+        }
+    }
+    .ivu-form-item-required {
+        .ivu-form-item-label:before {
+            line-height: .9;
+        }
+    }
+}
+
+.panel-href {
+    margin-right: 20px;
+}
+
+.flow-img {
+    width: 100%;
+}
+
+.product-card {
+    width: 350px;
+}
+
+.product-span {
+    margin-right: 10px;
+}
+
+.ivu-table .alarm-level-yellow td{
+    background-color: yellow;
+}
+
+.ivu-table .alarm-level-orange td{
+    background-color: orange;
+}
+
+.ivu-table .alarm-level-red td{
+    background-color: #FF7851;
+}
+
+th.ivu-table-column-right {
+    text-align: center !important;
+}
+
+td.ivu-table-column-right span {
+    margin-right: -14px;
+}
+
+// 滚动条定位
+.j-sum-fix .ivu-table-fixed,
+.j-sum-fix .ivu-table-fixed-right {
+    bottom: 52px;
+}
