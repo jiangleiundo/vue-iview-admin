@@ -439,7 +439,8 @@ export default [
     path: '/prod',
     name: 'prod',
     meta: {
-      hideInBread: true
+      icon: 'md-menu',
+      title: '公共参数维护'
     },
     component: Main,
     children: [
@@ -450,7 +451,16 @@ export default [
           icon: 'ios-navigate',
           title: '产品维护'
         },
-        component: () => import('@/view/j-product/product.vue')
+        component: () => import('@/view/j-common/j-product/product.vue')
+      },
+      {
+        path: 'pt_page',
+        name: 'pt_page',
+        meta: {
+          icon: 'ios-navigate',
+          title: '平台维护'
+        },
+        component: () => import('@/view/j-common/j-pt/pt.vue')
       }
     ]
   },

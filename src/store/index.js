@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import user from './module/user'
 import app from './module/app'
+import bus from './module/bus'
 
 Vue.use(Vuex)
 
@@ -18,6 +19,7 @@ export default new Vuex.Store({
   },
   modules: {
     user,
-    app
+    app,
+    bus
   }
 })

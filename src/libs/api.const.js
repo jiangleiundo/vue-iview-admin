@@ -229,3 +229,21 @@ export const setDays = (val, d) => {
     start.setDate(end.getDate() + d)
     return [start, end]
 }
+
+/**
+ * 是否包含目标值
+ * @param {*} val String & Array
+ * @param {*} tar string
+ */
+export const hasTar = (val, tar) => {
+    return (val + '').includes(tar)
+}
+
+/**
+ * 两个字符是否相等
+ * @param {*} s1
+ * @param {*} s2
+ */
+export const equalNm = (s1, s2) => {
+    return s1 === s2
+}
