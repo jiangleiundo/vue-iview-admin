@@ -71,6 +71,35 @@ export default [
     ]
   },
   {
+    path: '/prod',
+    name: 'prod',
+    meta: {
+      icon: 'md-menu',
+      title: '公共参数维护'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'product_page',
+        name: 'product_page',
+        meta: {
+          icon: 'ios-navigate',
+          title: '产品维护'
+        },
+        component: () => import('@/view/j-common/j-product/product.vue')
+      },
+      {
+        path: 'pt_page',
+        name: 'pt_page',
+        meta: {
+          icon: 'ios-navigate',
+          title: '平台维护'
+        },
+        component: () => import('@/view/j-common/j-pt/pt.vue')
+      }
+    ]
+  },
+  {
     path: '/components',
     name: 'components',
     meta: {
@@ -432,35 +461,6 @@ export default [
           notCache: true
         },
         component: () => import('@/view/argu-page/query.vue')
-      }
-    ]
-  },
-  {
-    path: '/prod',
-    name: 'prod',
-    meta: {
-      icon: 'md-menu',
-      title: '公共参数维护'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'product_page',
-        name: 'product_page',
-        meta: {
-          icon: 'ios-navigate',
-          title: '产品维护'
-        },
-        component: () => import('@/view/j-common/j-product/product.vue')
-      },
-      {
-        path: 'pt_page',
-        name: 'pt_page',
-        meta: {
-          icon: 'ios-navigate',
-          title: '平台维护'
-        },
-        component: () => import('@/view/j-common/j-pt/pt.vue')
       }
     ]
   },

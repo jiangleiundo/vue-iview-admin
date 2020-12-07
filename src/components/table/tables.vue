@@ -718,7 +718,7 @@ export default {
 }
 
 .j-table-form {
-  padding-bottom: 0;
+  padding: 4px;
   .j-search-btn {
     vertical-align: 0;
   }

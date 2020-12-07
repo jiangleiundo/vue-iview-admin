@@ -3,14 +3,14 @@ import router from '@/router'
 import pca from './pca'
 // import math from 'mathjs'
 import numeral from 'numeral'
-import { Message, Modal, Spin } from 'view-design'
+import {Message, Modal, Spin} from 'view-design'
 import axios from './api.request'
 import config from '@/config'
 // import moment from './moment.js'
 import handleBtns from '../components/table/handle-btns'
 // import ProductPoptip from '../components/product-poptip'
 
-const { noLoginCode, loginPath, BASE_URL } = config
+const {noLoginCode, loginPath, BASE_URL} = config
 
 export const Moment = d => {
   let m = moment(d)
@@ -272,7 +272,7 @@ export const request = (options) => {
   if (options.hideLoad) {
     opt.hideLoad = options.hideLoad
   }
-  if (options.method == 'post') {
+  if (options.method === 'post') {
     opt.data = options.data
     opt.headers = {
       'Content-Type': 'application/json'
@@ -354,8 +354,8 @@ export const $export2 = (url, data, name, total = 0) => {
     data: data
   }
   axios.request(opt).then(res => {
-    const BLOB = res.data,
-      fileReader = new FileReader()
+    const BLOB = res.data
+    const fileReader = new FileReader()
 
     fileReader.readAsDataURL(BLOB)
     fileReader.onload = (event) => {
@@ -404,8 +404,8 @@ export const $export = (url, data, name, total = 0) => {
     contractUrl: function (url, data) {
       return url + (url.indexOf('?') < 0 ? '?' : '&') + exportIn.splitData(data)
     }
-  },
-  finalUrl = exportIn.contractUrl(url, data)
+  }
+  let finalUrl = exportIn.contractUrl(url, data)
 
   window.open(finalUrl)
 }
@@ -499,8 +499,8 @@ export const confirm = (msg, yes, title, no) => {
  * @param res
  */
 export const successM = (res) => {
-  let msg = typeof res === 'string' ? res : cbMsg(res),
-      m = {
+  let msg = typeof res === 'string' ? res : cbMsg(res)
+  let m = {
         title: '提示信息',
         content: msg,
         okText: '关闭'
@@ -578,7 +578,8 @@ export const getDicts = (code, filter, filterKill) => {
  * @returns {string}
  */
 export const dictNameToValue = (code, name) => {
-  let dicts = loadDict(code), value = ''
+  let dicts = loadDict(code)
+  let value = ''
   if (dicts && dicts.length > 0) {
     dicts.some(item => {
       if (item.name == name) {
@@ -654,10 +655,10 @@ export const valueToText = (value, type, code) => {
 export const liveDict = {
   DEAL_STAT: {
     option: [
-      { label: '生效', value: '1' },
-      { label: '失效', value: '2' }
+      {label: '生效', value: '1'},
+      {label: '失效', value: '2'}
     ],
-    val2Nm: { '1': '生效', '2': '失效' }
+    val2Nm: {'1': '生效', '2': '失效'}
   }
 }
 
@@ -1070,15 +1071,15 @@ export const requiredValidator = (rule, value, callback) => {
 }
 
 export const inputNumberRequiredValidator = msg => {
-  return { required: true, validator: requiredValidator, message: msg, trigger: 'blur' }
+  return {required: true, validator: requiredValidator, message: msg, trigger: 'blur'}
 }
 
 export const changeRequiredValidator = msg => {
-  return { required: true, validator: requiredValidator, message: msg, trigger: 'change' }
+  return {required: true, validator: requiredValidator, message: msg, trigger: 'change'}
 }
 
 export const filesUploadRequiredValidator = msg => {
-  return { type: 'array', required: true, validator: requiredValidator, message: msg, trigger: 'change' }
+  return {type: 'array', required: true, validator: requiredValidator, message: msg, trigger: 'change'}
 }
 
 /**
@@ -1209,7 +1210,7 @@ export const isEmpty = (val) => {
  * @param pureTable 纯表格
  * @returns {*}
  */
-export const getTableColumns = ({ tablePam, tableTitle, liveTablePam, pure = true, option, pureTable }) => {
+export const getTableColumns = ({tablePam, tableTitle, liveTablePam, pure = true, option, pureTable}) => {
   let widthMap = new Map([[1, 100], [2, 150], [3, 200], [4, 250], [6, 90], [9, 120], [12, 130], [15, 140], [18, 150], [21, 160], [24, 170], [27, 180]]),
     arr = [], reg = /\(/
   if (!tablePam || tablePam.length === 0 || tableTitle.length === 0) return arr
@@ -1302,28 +1303,28 @@ export const getTableColumns = ({ tablePam, tableTitle, liveTablePam, pure = tru
 export const getDateRange = (type, sTim, eTim) => {
   if (!sTim || !eTim) return []
   if (type === '1') {
-    let s = getWeekDate(sTim),
-        e = getWeekDate(eTim)
+    let s = getWeekDate(sTim)
+    let e = getWeekDate(eTim)
     return [s[0], e[0]]
   } else if (type === '0' || type === '2' || type === '4') {
-    let s = formatDate(sTim),
-        e = formatDate(eTim)
+    let s = formatDate(sTim)
+    let e = formatDate(eTim)
     return [s, e]
   } else if (type === '3') {
-    let s = formatDate(sTim),
-        e = formatDate(eTim),
-        qs = new Date(s).myformat('q'),
-        qe = new Date(e).myformat('q'),
-        ys = s.split('-')[0],
-        ye = e.split('-')[0],
-        map = new Map([
+    let s = formatDate(sTim)
+    let e = formatDate(eTim)
+    let qs = new Date(s).myformat('q')
+    let qe = new Date(e).myformat('q')
+    let ys = s.split('-')[0]
+    let ye = e.split('-')[0]
+    let map = new Map([
           ['1', '-01-01'],
           ['2', '-03-01'],
           ['3', '-07-01'],
           ['4', '-10-01']
-        ]),
-        sq = ys + map.get(qs),
-        eq = ye + map.get(qe)
+        ])
+    let sq = ys + map.get(qs)
+    let eq = ye + map.get(qe)
     return [sq, eq]
   }
 }
@@ -1334,8 +1335,8 @@ export const getDateRange = (type, sTim, eTim) => {
  * @returns {number}
  */
 export const isInOneMonth = (dateArr) => {
-  let s = dateArr[0].split('-'),
-      e = dateArr[1].split('-')
+  let s = dateArr[0].split('-')
+  let e = dateArr[1].split('-')
   if (e[0] - s[0] > 1) return 0
   if (e[0] - s[0] === 1) { // 跨1年
     if (!(e[1] === '01' && s[1] === '12')) return 0 // 跨多月
@@ -1349,4 +1350,104 @@ export const isInOneMonth = (dateArr) => {
     if (e[2] > s[2]) return 0
   }
   return 1
+}
+
+/**
+ * 格式化省市
+ * @param {*} cb
+ */
+export const getProvinceCityFormat = (cb) => {
+  loadDict('province,city', res => {
+    let provDict = res.data['province'].dicts
+    let cityDict = res.data['city'].dicts
+    let pArr = []
+    provDict.forEach(prov => {
+      let cArr = []
+      let {dictItemVal: value, dictItemNm: label} = prov
+      cityDict.forEach(city => {
+        if (city.fathId === prov.dictItemVal) {
+          let {dictItemVal: value, dictItemNm: label} = city
+          cArr.push({label, value})
+        }
+      })
+      pArr.push({label, value, children: cArr})
+    })
+
+    cb(pArr)
+  })
+}
+
+/**
+ * 过滤字典项
+ * @param {*} code 字典码值
+ * @param {*} param1
+ */
+export const getFilterDict = (code, {filter, filterKill, dictData}) => {
+  if (!code) return
+  let dictArr = dictData || loadDict(code)
+  if (!dictArr) return
+
+  let filterArr = filter || filterKill
+  if (filterArr && filterArr.length) {
+    let dict = []
+    if (dictArr.dicts) {
+      dictArr.forEach(d => {
+        let idx = filterArr.includes(d.dictItemVal)
+        let flag = filter ? (idx !== -1) : (idx === -1)
+        flag && dict.push(d)
+      })
+    }
+  }
+}
+
+/**
+ * 获取比对后的参数
+ * @param {*} old 旧参数
+ * @param {*} now 新参数
+ */
+export const getDiffPam = (old = {}, now = {}) => {
+  let diff = {}
+  let ignore = ['pfPam'] // 忽略比较的参数
+
+  Object.keys(now).forEach(k => {
+    if (ignore.includes(k)) return false
+    let o = old[k]
+    let n = now[k]
+    let isO = Array.isArray(o)
+    let isN = Array.isArray(n)
+
+    if (n && n === 0) {
+      if (isN && isO) {
+        if (n.sort().toString() !== o.sort().toString()) {
+          diff[k] = o
+        }
+      } else if ((isO && !isN) || (isN && !isO)) { // 只有一个数组
+        let a1 = isO ? o : n
+        let a2 = isO ? n : o
+        if (typeof o === 'undefined') o = 'unload'
+        if (a1.length === 1) {
+          let a1Str = a1.toString()
+          let a2Str = a2.toString()
+          if (!a1Str.includes(a2Str)) {
+            diff[k] = o
+          }
+        } else {
+          diff[k] = o
+        }
+      } else {
+        if (typeof o === 'undefined') o = 'unload'
+      }
+    }
+  })
+
+  return diff
+}
+
+/**
+ * 转化成数字或使用默认值
+ * @param {*} val
+ * @param {*} def
+ */
+export const toNumOrDef = (val, def) => {
+  return isNaN(val) ? def : Number(val)
 }
